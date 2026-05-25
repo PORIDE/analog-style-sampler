@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    @apply h-full overflow-hidden;
+  }
+}
+
+/* Auto-rotate app to landscape when in portrait mode */
+@media screen and (orientation: portrait) {
+  #root > div {
+    width: 100dvh !important;
+    height: 100dvw !important;
+    transform: rotate(90deg) translateY(-100dvw);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+  }
+
+  /* Force Joyride arrow to be dark */
+  [data-testid="arrow"] svg path,
+  [data-testid="arrow"] svg polygon,
+  .__floater__arrow svg path,
+  .__floater__arrow svg polygon {
+    fill: #16161a !important;
+  }
+}

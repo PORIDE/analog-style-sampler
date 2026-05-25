@@ -1,0 +1,5 @@
+{
+  "name": "Analog Style Sampler",
+  "description": "A web-based sampler with an analog hardware interface design.",
+  "requestFramePermissions": ["microphone"]
+}
